@@ -1,6 +1,10 @@
 # friendly-parakeet
 
-For user to get a new, secure password
+**Introduction**
+
+This application is meant for user to generate a new, random, and secure password.
+
+**Application Goals**
 
 When clicking the button to generate a password
 User is presented with a series of prompts for password criteria
