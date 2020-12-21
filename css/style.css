@@ -57,20 +57,26 @@ h3 {
 .card-body {
   min-height: 100px;
 }
-
 .critariaContainer { 
   padding: 10px 0px 20px;
+}
+#characterAmount {
+  margin: 10px 0;
 }
 label {
   padding: 10px 5px;
 }
-#characterAmount {
-  margin-bottom: 10px ;
+.criteriaLabel{
+  padding-right: 0;
+}
+.checkbox {
+  margin-left: 0;
+  margin-right: 10px;
 }
 
 .card-footer {
   text-align: center;
-  padding: 20px 20px 0;
+  padding: 10px 20px 0;
 }
 
 .card-footer::before {
