@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Password Generator</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
@@ -17,19 +17,19 @@
 
     <div class="card">
       <div class="card-header">
-        <h3>Select desired criteria to Gene rate a Password</h3> <!-- header of generator-->
+        <h3>Select Desired Criteria to Generate a Password</h3> <!-- header of generator-->
       </div>
 
       <div class="card-body">
         <textarea readonly id="passwordReturned" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
-      </div>
+      </div> 
 
-      <form id="passwordForm">
+      <div class="criteriaContainer" id="passwordCriteria">
+
         <div id="characterAmount">
-          <label for="characterRange">No. of Characters</label>
-          <input type="range" min="8" max="128" id="characterRangeAmount" value="8">
-          <input type="number" min="8" max="128" id="characterNumberAmount" value="8">
-      </div>
+          <label for="characterLength">Number of Characters</label>
+          <input type="number" min="8" max="128" id="characterLength" value="8">
+        </div>
 
         <label for="withUpperCase">Uppercase</label>
         <input type="checkbox" id="withUpperCase">
@@ -47,15 +47,11 @@
           <button id="generate" class="btn">Generate Password</button>
         </div>
 
-      </form>
-
-       
-
+      </div>
     </div>
   </div>
-  <!--
-  <script src="script.js"></script>-->
-  <script src="./friendly-parakeet/script2.js"></script> <!--DELETE THIS WHEN CODE WORKS!!!!!-->
+  
+   <script src="js/script.js"></script>
 </body>
 
 </html>

@@ -58,7 +58,7 @@ h3 {
   min-height: 100px;
 }
 
-form { 
+.critariaContainer { 
   padding: 10px 0px 20px;
 }
 label {
@@ -112,7 +112,7 @@ button[disabled] {
   float: right;
 }
 
-#password {
+#passwordReturned {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -140,7 +140,7 @@ button[disabled] {
     padding: 10px 15px;
   }
 
-  #password {
+  #passwordReturned {
     font-size: 1rem;
   }
 }
