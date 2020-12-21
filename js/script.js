@@ -5,11 +5,11 @@ var withUpperCase = document.getElementById("withUpperCase")
 var withLowerCase = document.getElementById("withLowerCase")
 var withNumbers = document.getElementById("withNumbers")
 var withSymbols = document.getElementById("withSymbols")
-var passwordReturned = document.getElementById("passwordReturned")
+var passwordResult = document.getElementById("passwordReturned")
 var generateBtn = document.getElementById("generate")
 
-//DOM Elements
-var passwordEl = document.getElementById("passwordReturned");
+//DOM Elements variables
+var pwdreturnEl = document.getElementById("passwordReturned");
 var lengthEl = document.getElementById("characterLength");
 var uppercaseEl = document.getElementById("withUpperCase");
 var lowercaseEl = document.getElementById("withLowerCase");
@@ -18,7 +18,7 @@ var symbolEl = document.getElementById("withSymbols");
 var generateEl = document.getElementById("generate");
 
 //OBJECT with all generator functions
-var random = {
+var randomFunct = {
   lower: randomLowerCase,
   upper: randomUpperCase,
   number: randomNumber,
@@ -27,39 +27,42 @@ var random = {
 
 //Event Listerner 
 generateEl.addEventListener("click", () => { //function to get values from input
-  const length = +lengthEl.value;
-  const includeLower = lowercaseEl.checked;
-  const includeUpper = uppercaseEl.checked;
-  const includeNumber = numberEl.checked;
-  const includeSymbol = symbolEl.checked;
-
-  passwordReturned.innerText = generatedPassword(length, includeLower, includeUpper, includeNumber, includeSymbol);
+  var length = +lengthEl.value;
+  //console.log(typeof length)
+  var includeLower = lowercaseEl.checked;
+  var includeUpper = uppercaseEl.checked;
+  var includeNumber = numberEl.checked;
+  var includeSymbol = symbolEl.checked;
+  console.log(includeSymbol, includeUpper, includeLower, includeNumber, length)
+  pwdreturnEl.innerText = generatedPassword(length, includeLower, includeUpper, includeNumber, includeSymbol);
 });
 
-//generatePassword() 
+//generatedPassword() 
 function generatedPassword(length, lower, upper, number, symbol) {
   //pwd variable
   let generatedPassword = ""; 
-  var criteriaType = length + lower + upper + number + symbol;
+  var criteriaCount = length + lower + upper + number + symbol;
   //criteria array with filter method to exclude false values = nonselected criteria
   var criteriaArr = [{lower}, {upper}, {number}, {symbol}].filter(item => Object.values(item)[0]);
   //console.log("criteriaArr: ", criteriaArr);
   
-  if(criteriaArr === 0) {
-    return ""; //Add propmt here
+  if(criteriaCount === 0) {
+    return ""; //Add propmt HERE
   }
   
   //loop the through the pwd length and call generator function for each selected criteria
-  for (var i = 0; i < length; i+= criteriaType) {
+  for (var i = 0; i < length; i+= criteriaCount) {
     criteriaArr.forEach(type => {
       var funcName = Object.keys(type)[0];
       //console.log('funcName: ', funcName);
-      generatedPassword += random[funcName]();
+      generatedPassword += randomFunct[funcName]();
+      //console.log('funcName: ' , funcName)
     })
     //add  final pw to the pw var and return as pwdResult text
     var pwdResult = generatedPassword.slice(0, length);
     return pwdResult;
   } 
+  console.log(generatedPassword)
 }
 
 //GENERATOR FUNCTIONS
