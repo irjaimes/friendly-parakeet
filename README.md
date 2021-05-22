@@ -4,6 +4,15 @@
 
 This application is meant for user to generate a new, random, and secure password.
 
+Missing requirement- 
+
+**Application doesn't prompt for any password options**
+**Application doesn't generate valid password based on password options**
+**Application doesn't require minimum password length of 8 character and maximum password length of 128 characters (hint- use javascript conditional statement for this section)**
+
+
+
+
 **Application Goals**
 
 When clicking the button to generate a password
